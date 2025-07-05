@@ -1,0 +1,19 @@
+@startuml
+start
+
+:Start Client;
+:Connect to Server;
+
+fork
+  :Input Loop;
+  :Send Message to Server;
+end fork
+
+fork
+  :Receive Loop;
+  :Receive Message from Server;
+  :Display Message;
+end fork
+
+stop
+@enduml

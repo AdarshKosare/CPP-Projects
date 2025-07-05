@@ -1,0 +1,17 @@
+@startuml
+start
+
+:Start Server;
+:Create Listening Socket;
+repeat
+  :Accept New Client;
+  fork
+    :Spawn Thread to Handle Client;
+    :Receive Message;
+    :Broadcast to All Clients;
+    :Check Disconnection;
+  end fork
+repeat while (New Client?)
+
+stop
+@enduml
